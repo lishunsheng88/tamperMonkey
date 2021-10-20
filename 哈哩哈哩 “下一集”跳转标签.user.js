@@ -19,8 +19,8 @@
     var regex=/(\/[0-9]*)/g;
     var regexResult=nowUrl.match(regex);
     var now=parseInt(regexResult[regexResult.length-1].substring(1,4))
-    var re= new RegExp(parseInt(now,'g'))
-    var url=nowUrl.replace(re,now+1);
+    var re= /\/\d{1,10}.html/g
+    url=nowUrl.replace(re,"/"+(now+1)+".html")
     //var node=document.getElementsByClassName("wrap head clearfix")[0].getElementsByClassName("logo")[0].getElementsByTagName("a")[0].setAttribute("href", url)
 
     var node=document.createElement("a");
